@@ -1,15 +1,30 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import org.example.notification.NotificationService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+
 public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        OrderService order = new OrderService();
+//        NotificationService noti = new EmailService();
+//        OrderService order = new OrderService(noti);
+//        order.placeOrder();
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        // spring container ko start karo using annotation based configuration
+        OrderService order  = context.getBean(OrderService.class);
         order.placeOrder();
+
+        EmailService email = context.getBean(EmailService.class);
+        email.sendNotification();
+
+
 
 
 
     }
+
+
 }

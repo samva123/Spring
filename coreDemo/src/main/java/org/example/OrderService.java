@@ -1,11 +1,19 @@
 package org.example;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class OrderService {
 
-    EmailService noti = new EmailService();
+//    NotificationService noti ;
+//
+//    public OrderService(NotificationService noti){
+//        this.noti = noti;
+//    }
 
     public void placeOrder(){
         System.out.println("order placed");
-        noti.sendNotification();
+        //noti.sendNoti();
+
     }
 }
