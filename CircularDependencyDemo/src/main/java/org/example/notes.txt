@@ -1,0 +1,3 @@
+So whenever we fa e circular dependency using constructor injection that is a problem we can solve it using setter and field injection because they use a concept called reference concept in which if orderservice need a payment service it will create a payment service and to payment service it gives a partial order service because unlike constructor we do not have tp inject a dependency at the time of creation only
+
+spring.main.allow-circularrefernce is already set  to false after spring 2.6

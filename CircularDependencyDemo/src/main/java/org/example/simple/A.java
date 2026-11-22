@@ -1,4 +1,11 @@
-package org.example;
+package org.example.simple;
 
 public class A {
+
+    private B b;
+
+    public A(){
+        this.b = new B() ;
+    }
+
 }
