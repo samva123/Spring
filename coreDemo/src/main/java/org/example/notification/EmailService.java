@@ -1,10 +1,12 @@
-package org.example;
+package org.example.notification;
 
-import org.example.notification.NotificationService;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-
-    @Component
+    //@Primary
+//    @Qualifier("cp")
+//   @Component
     public class EmailService implements NotificationService {
 
         public void sendNotification(){

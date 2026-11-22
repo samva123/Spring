@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.notification.EmailService;
 import org.example.notification.NotificationService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -18,9 +19,11 @@ public class Main {
         OrderService order  = context.getBean(OrderService.class);
         order.placeOrder();
 
-//      EmailService email = context.getBean(EmailService.class);
-//      email.sendNotification();
+        EmailService email = context.getBean(EmailService.class);
+        email.sendNotification();
 
+//        User user = context.getBean(User.class);
+//        System.out.println(user.getName());
 
 
 
