@@ -1,0 +1,14 @@
+if we keep the scope singleton then the order service object will be crated even if no one is calling it because spring handle it when it is upping th ioc container but if it is prototype then the object will not be created
+
+Single -> Eager initialization
+Prototype -> Lazy initialization(jab jarurat hai tabhi)
+
+ singleton :  stateless like orderservice mean service classes or manager classes
+ prototype: stateful like user class when we need different user evey time kind of
+
+
+ request , seesion and application are also some scopes
+
+ BEANS INITIALIZATION
+
+ @lazy can be used on above orderservice and payment service
