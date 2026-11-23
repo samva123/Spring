@@ -12,3 +12,18 @@ Prototype -> Lazy initialization(jab jarurat hai tabhi)
  BEANS INITIALIZATION
 
  @lazy can be used on above orderservice and payment service
+
+ public OrderService(@Lazy PaymentService paymentService) if we do this then it will insert a proxy object of payment service so orderservice can get prepared
+ and if we call a function of it then only the original object will be made
+
+
+ spring.main.lazy-initialization = true then all the beans will be lazy if we chnage this in application.properties
+
+ @Lazy("false") can also be used
+
+
+
+
+ we can make payment service lazy and lazy also like line 16 then we can remove cirular dependency
+
+ 
