@@ -10,6 +10,10 @@ public class Main {
     public static void main(String[] args) {
 
         ApplicationContext context =  new ClassPathXmlApplicationContext("Beans.xml");
+        //OrderService orderji = context.getBean(OrderService.class);
+        //2nd way
+        OrderService orderji = (OrderService) context.getBean("orderService");
+        orderji.pay();
 
 
     }
