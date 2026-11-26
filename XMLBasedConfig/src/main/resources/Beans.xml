@@ -6,19 +6,29 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here -->
-    <bean id = "paymentService" class = "org.example.PaymentService">
-        <constructor-arg index = "0" value="UPI"/>
-<!--        // we can also pass name of argument instead of index-->
-    </bean>
+<!--    &lt;!&ndash; bean definitions here &ndash;&gt;-->
+<!--    <bean id = "paymentService" class = "org.example.Package.PaymentService">-->
+<!--        <constructor-arg index = "0" value="UPI"/>-->
+<!--&lt;!&ndash;        // we can also pass name of argument instead of index&ndash;&gt;-->
+<!--    </bean>-->
 
-    <bean id = "orderService" class = "org.example.OrderService">
-        <constructor-arg ref="paymentService"/>
-    </bean>
+<!--    <bean id = "orderService" class = "org.example.OrderService">-->
+<!--       <property name="paymentService"  ref = "paymentService"/>-->
+<!--&lt;!&ndash;        this name is the name of setter after set&ndash;&gt;-->
+<!--    </bean>-->
+
+<!--    <bean id = "orderService" class = "org.example.OrderService">-->
+<!--        <constructor-arg ref="paymentService"/>-->
+<!--    </bean>-->
 <!--    //<bean id = "orderService2" class = "org.example.OrderService"/>-->
 
 
+    <bean id="upiPaymentService" class="org.example.Package.UPIPaymentService"/>
 
+    <bean id="cardPaymentService" class="org.example.Package.CardPaymentService"/>
+
+    <bean id="orderService" class="org.example.OrderService">
+            
 
 </beans>
 
