@@ -7,7 +7,16 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id = "orderService" class = "org.example.OrderService"/>
+    <bean id = "paymentService" class = "org.example.PaymentService">
+        <constructor-arg index = "0" value="UPI"/>
+<!--        // we can also pass name of argument instead of index-->
+    </bean>
+
+    <bean id = "orderService" class = "org.example.OrderService">
+        <constructor-arg ref="paymentService"/>
+    </bean>
+<!--    //<bean id = "orderService2" class = "org.example.OrderService"/>-->
+
 
 
 

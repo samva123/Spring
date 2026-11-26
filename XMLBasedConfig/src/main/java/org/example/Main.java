@@ -11,8 +11,13 @@ public class Main {
 
         ApplicationContext context =  new ClassPathXmlApplicationContext("Beans.xml");
         //OrderService orderji = context.getBean(OrderService.class);
-        //2nd way
-        OrderService orderji = (OrderService) context.getBean("orderService");
+        // the above method will not work when we have the same class
+
+
+        //2nd way by id
+        OrderService orderji = (OrderService) context.getBean("orderService" , OrderService.class);
+
+
         orderji.pay();
 
 
