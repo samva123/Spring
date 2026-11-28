@@ -28,7 +28,24 @@
     <bean id="cardPaymentService" class="org.example.Package.CardPaymentService"/>
 
     <bean id="orderService" class="org.example.OrderService">
-            
+        <constructor-arg ref = "cardPaymentService"/>
+    </bean>
 
-</beans>
+<!--    <bean id="userService" class="org.example.OrderService"-->
+<!--            scope="prototype"/>-->
+
+<!--    if we have to pass value which is a list of something like that-->
+<!--    <bean id="userService" class="org.example.UserService">-->
+<!--        <constructor-arg name="username">-->
+<!--            <list>-->
+<!--                <value>varun</value>-->
+<!--                <value>krish</value>-->
+<!--    entry can be used for map-->
+<!--            </list>-->
+<!--            -->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+
+</beans> 
 
